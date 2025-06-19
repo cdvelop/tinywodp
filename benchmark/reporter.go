@@ -66,7 +66,7 @@ func (r *ReportGenerator) generateBinarySizeSection(binaries []BinaryInfo) (stri
 	content.WriteString("## Binary Size Comparison\n\n")
 	content.WriteString("[Standard Library Example](benchmark/bench-binary-size/standard-lib/main.go) | [TinyString Example](benchmark/bench-binary-size/tinystring-lib/main.go)\n\n")
 	content.WriteString("<!-- This table is automatically generated from build-and-measure.sh -->\n")
-	content.WriteString("*Last updated: " + time.Now().Format("2006-01-02 15:04:05") + "*\n\n")
+	content.WriteString("*Last updated: " + time.Now().Fmt("2006-01-02 15:04:05") + "*\n\n")
 
 	// Group binaries by optimization level
 	optimizations := getOptimizationConfigs()
@@ -194,7 +194,7 @@ func (r *ReportGenerator) generateMemorySection(comparisons []MemoryComparison) 
 	content.WriteString("## Memory Usage Comparison\n\n")
 	content.WriteString("[Standard Library Example](benchmark/bench-memory-alloc/standard) | [TinyString Example](benchmark/bench-memory-alloc/tinystring)\n\n")
 	content.WriteString("<!-- This table is automatically generated from memory-benchmark.sh -->\n")
-	content.WriteString("*Last updated: " + time.Now().Format("2006-01-02 15:04:05") + "*\n\n")
+	content.WriteString("*Last updated: " + time.Now().Fmt("2006-01-02 15:04:05") + "*\n\n")
 	content.WriteString("Performance benchmarks comparing memory allocation patterns between standard Go library and TinyString:\n\n")
 
 	// Enhanced table with better styling and icons
@@ -307,7 +307,7 @@ func (r *ReportGenerator) generateJSONSection(comparisons []JSONComparison) (str
 	content.WriteString("## 🔄 JSON Performance Comparison\n\n")
 	content.WriteString("Comparing JSON performance between standard library (`encoding/json`) and TinyString:\n\n")
 	content.WriteString("<!-- This table is automatically generated from json-comparison benchmarks -->\n")
-	content.WriteString("*Last updated: " + time.Now().Format("2006-01-02 15:04:05") + "*\n\n")
+	content.WriteString("*Last updated: " + time.Now().Fmt("2006-01-02 15:04:05") + "*\n\n")
 
 	// Tabla principal
 	content.WriteString("| 🧪 Operation | 📦 Batch Size | 📚 Library | 💾 Memory/Op | 🔢 Allocs/Op | ⏱️ Time/Op | 📈 Performance |\n")

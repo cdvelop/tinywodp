@@ -172,9 +172,9 @@ func GenerateComplexTestData(count int) []ComplexUser {
 	users := make([]ComplexUser, count)
 	for i := 0; i < count; i++ {
 		users[i] = ComplexUser{
-			ID:        Format("user_%d", i).String(),
-			Username:  Format("user_%d_2024", i).String(),
-			Email:     Format("user%d@example.com", i).String(),
+			ID:        Fmt("user_%d", i).String(),
+			Username:  Fmt("user_%d_2024", i).String(),
+			Email:     Fmt("user%d@example.com", i).String(),
 			CreatedAt: "2024-06-12T10:00:00Z",
 			LastLogin: "2024-06-05T10:00:00Z",
 			IsActive:  true,
@@ -393,17 +393,17 @@ func GenerateSimplePersonArray(count int) []Person {
 	persons := make([]Person, count)
 	for i := 0; i < count; i++ {
 		persons[i] = Person{
-			Id:        Format("person_%d", i).String(),
-			Name:      Format("Person %d", i).String(),
+			Id:        Fmt("person_%d", i).String(),
+			Name:      Fmt("Person %d", i).String(),
 			BirthDate: "1980-01-15",
 			Gender:    "male",
-			Phone:     Format("+1-555-123-%04d", i).String(),
+			Phone:     Fmt("+1-555-123-%04d", i).String(),
 			Addresses: []Address{
 				{
-					Id:      Format("addr_%d_1", i).String(),
-					Street:  Format("%d Main St", 100+i).String(),
+					Id:      Fmt("addr_%d_1", i).String(),
+					Street:  Fmt("%d Main St", 100+i).String(),
 					City:    "City",
-					ZipCode: Format("%05d", 10000+i).String(),
+					ZipCode: Fmt("%05d", 10000+i).String(),
 				},
 			},
 		}

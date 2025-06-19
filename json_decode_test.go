@@ -1,8 +1,9 @@
 package tinywodp
 
 import (
-	. "github.com/cdvelop/tinystring"
 	"testing"
+
+	. "github.com/cdvelop/tinystring"
 )
 
 // Test complete ComplexUser structure decoding (encode-decode cycle)
@@ -238,12 +239,12 @@ func validateComplexProfile(t *testing.T, expected, actual ComplexProfile) {
 			continue
 		}
 		actualPhone := actual.PhoneNumbers[i]
-		assertEqual(t, expectedPhone.ID, actualPhone.ID, Format("PhoneNumbers[%d].ID", i).String())
-		assertEqual(t, expectedPhone.Type, actualPhone.Type, Format("PhoneNumbers[%d].Type", i).String())
-		assertEqual(t, expectedPhone.Number, actualPhone.Number, Format("PhoneNumbers[%d].Number", i).String())
-		assertEqual(t, expectedPhone.Extension, actualPhone.Extension, Format("PhoneNumbers[%d].Extension", i).String())
-		assertEqual(t, expectedPhone.IsPrimary, actualPhone.IsPrimary, Format("PhoneNumbers[%d].IsPrimary", i).String())
-		assertEqual(t, expectedPhone.IsVerified, actualPhone.IsVerified, Format("PhoneNumbers[%d].IsVerified", i).String())
+		assertEqual(t, expectedPhone.ID, actualPhone.ID, Fmt("PhoneNumbers[%d].ID", i).String())
+		assertEqual(t, expectedPhone.Type, actualPhone.Type, Fmt("PhoneNumbers[%d].Type", i).String())
+		assertEqual(t, expectedPhone.Number, actualPhone.Number, Fmt("PhoneNumbers[%d].Number", i).String())
+		assertEqual(t, expectedPhone.Extension, actualPhone.Extension, Fmt("PhoneNumbers[%d].Extension", i).String())
+		assertEqual(t, expectedPhone.IsPrimary, actualPhone.IsPrimary, Fmt("PhoneNumbers[%d].IsPrimary", i).String())
+		assertEqual(t, expectedPhone.IsVerified, actualPhone.IsVerified, Fmt("PhoneNumbers[%d].IsVerified", i).String())
 	}
 
 	// Addresses with coordinates
@@ -273,10 +274,10 @@ func validateComplexProfile(t *testing.T, expected, actual ComplexProfile) {
 			continue
 		}
 		actualLink := actual.SocialLinks[i]
-		assertEqual(t, expectedLink.Platform, actualLink.Platform, Format("SocialLinks[%d].Platform", i).String())
-		assertEqual(t, expectedLink.URL, actualLink.URL, Format("SocialLinks[%d].URL", i).String())
-		assertEqual(t, expectedLink.Username, actualLink.Username, Format("SocialLinks[%d].Username", i).String())
-		assertEqual(t, expectedLink.Verified, actualLink.Verified, Format("SocialLinks[%d].Verified", i).String())
+		assertEqual(t, expectedLink.Platform, actualLink.Platform, Fmt("SocialLinks[%d].Platform", i).String())
+		assertEqual(t, expectedLink.URL, actualLink.URL, Fmt("SocialLinks[%d].URL", i).String())
+		assertEqual(t, expectedLink.Username, actualLink.Username, Fmt("SocialLinks[%d].Username", i).String())
+		assertEqual(t, expectedLink.Verified, actualLink.Verified, Fmt("SocialLinks[%d].Verified", i).String())
 	}
 
 	// Preferences
@@ -287,7 +288,7 @@ func validateComplexProfile(t *testing.T, expected, actual ComplexProfile) {
 }
 
 func validateComplexAddress(t *testing.T, expected, actual ComplexAddress, index int) {
-	prefix := Format("Addresses[%d]", index).String()
+	prefix := Fmt("Addresses[%d]", index).String()
 	assertEqual(t, expected.ID, actual.ID, prefix+".ID")
 	assertEqual(t, expected.Type, actual.Type, prefix+".Type")
 	assertEqual(t, expected.Street, actual.Street, prefix+".Street")
